@@ -218,12 +218,12 @@
         <tr><td>YM</td><td>50,743.00</td><td>50,739.00</td><td>45,052.00 ~ 51,209.00</td><td>50,780.67 / 50,818.33 / 50,856.67｜50,704.67 / 50,666.33 / 50,628.67</td><td>接近區間上沿；若失守 S1，短線轉震盪偏弱</td><td>Yahoo Chart: https://query1.finance.yahoo.com/v8/finance/chart/YM=F?range=3mo&amp;interval=1d</td><td>2026-05-29 10:40 HKT</td></tr>
         <tr><td>NQ</td><td>30,307.00</td><td>30,241.00</td><td>22,961.50 ~ 30,379.00</td><td>30,373.83 / 30,440.67 / 30,519.33｜30,228.33 / 30,149.67 / 30,082.83</td><td>高位震盪；跌破 S1 需防守，重上昨收才轉穩</td><td>Yahoo Chart: https://query1.finance.yahoo.com/v8/finance/chart/NQ=F?range=3mo&amp;interval=1d</td><td>2026-05-29 10:40 HKT</td></tr>
         <tr><td>MHI（小恒指期貨）</td><td>25,006.16</td><td>25,096.21</td><td>24,203.54 ~ 26,844.80</td><td>25,118.54 / 25,230.92 / 25,252.51｜24,984.57 / 24,962.98 / 24,850.60</td><td>以 ^HSI 作 MHI proxy（同方向監測）；暫在區間中上段</td><td>Yahoo Chart (proxy): https://query1.finance.yahoo.com/v8/finance/chart/%5EHSI?range=3mo&amp;interval=1d</td><td>2026-05-29 10:40 HKT</td></tr>
-        <tr><td>HTI</td><td>N/A（來源暫不可用）</td><td>4,897.20</td><td>待回填（富途90日）</td><td>N/A（來源暫不可用）</td><td>HTI Yahoo mapping=HSTECH.HK；單日資料可驗證，90D/SR 待同源回填</td><td>Yahoo Chart: https://query1.finance.yahoo.com/v8/finance/chart/HSTECH.HK?range=3mo&amp;interval=1d</td><td>2026-05-29 10:40 HKT</td></tr>
+        <tr><td>HTI</td><td>估算 4,914.96（來源受限）</td><td>4,897.20</td><td>待回填（富途90日）</td><td>4,953.61 / 5,010.02 / 5,048.67｜4,858.55 / 4,819.90 / 4,763.49（estimate）</td><td>HTI Yahoo mapping=HSTECH.HK；主來源受限時以 H/L/LTP 估算中樞與 R/S，待同源回填覆核</td><td>Yahoo Chart: https://query1.finance.yahoo.com/v8/finance/chart/HSTECH.HK?range=3mo&amp;interval=1d</td><td>2026-05-29 10:40 HKT</td></tr>
       </table>
       </div>
       <ul>
         <li><strong>執行備註：</strong>Futu preflight 結果：A) OpenD 127.0.0.1:11111 = ok；B) 合約可解析/快照檢查：US.YMmain / US.NQmain 回傳 Insufficient quote permission，HK.MHImain / HK.HTImain 回傳需先訂閱 Basic data；C) 權限檢查：US.YMmain 的 quote + history call 皆回傳 Insufficient quote permission（entitlement，非連線/port 問題）。</li>
-        <li><strong>Fallback 狀態：</strong>Futu API：failed（entitlement + HK subscription requirement）；Fallback sources：Yahoo（YM/NQ/^HSI/HSTECH.HK）/ Stooq（Top-5 股票快照）；Last verified time：2026-05-29 10:40:51 HKT。</li>
+        <li><strong>Fallback 狀態：</strong>Futu API：failed（entitlement + HK subscription requirement）；Fallback sources：Yahoo（YM/NQ/^HSI/HSTECH.HK）/ Stooq（Top-5 股票快照）；若 Yahoo 回 429/空值則自動重試，仍失敗則以 estimate 補齊 HTI R/S 並標註；Last verified time：2026-05-29 10:40:51 HKT。</li>
         <li><strong>欄位完整性：</strong>「上日收市價」與「最新價」嚴格分列；90D 區間由同一 Yahoo Chart 90D 日線計算，避免跨源混用。</li>
       </ul>
     </div>
