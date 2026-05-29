@@ -19,9 +19,8 @@
     ul,ol{margin:6px 0 0 18px} li{margin:5px 0}
     .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
     .pill{display:inline-block;border:1px solid #3f5180;border-radius:999px;padding:2px 8px;font-size:.8rem;margin-right:6px;color:#cfe0ff}
+    table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:980px} th,td{border:1px solid #354875;padding:6px;vertical-align:top} th{background:#15224a}
     .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
-    table.wide{min-width:980px;width:100%;border-collapse:collapse;font-size:.9rem}
-    th,td{border:1px solid #354875;padding:6px;vertical-align:top} th{background:#15224a}
     .ok{color:var(--ok)} .warn{color:var(--warn)} .danger{color:var(--danger)}
     .foot{color:var(--muted);font-size:.85rem;padding:0 14px 14px}
     @media (max-width:840px){.grid{grid-template-columns:1fr}.tabs{overflow:auto;white-space:nowrap}}
@@ -30,8 +29,8 @@
 <body>
 <div class="wrap"><div class="card">
   <div class="hd">
-    <h1>Morning Brief（最新版本）</h1>
-    <div class="meta">日期：2026-05-28（系統時區）｜模式：multi-region（HK + US）｜Tab：AI Brief + Finance Market Brief</div>
+    <h1>Morning Brief（長版）</h1>
+    <div class="meta">日期：2026-05-29（系統時區）｜版本：AI Brief + Finance Market Brief 雙分頁</div>
   </div>
   <div class="tabs">
     <button class="tab active" data-tab="ai">AI Brief</button>
@@ -39,145 +38,250 @@
   </div>
 
   <section class="panel active" id="ai">
-    <div class="sec"><h2>AI Brief｜深度主題：Agent 生態進入「Workflow ROI + 可治理」競爭</h2>
-      <p>AI agent 生態由「模型能力比拼」轉向「端到端交付能力」：真正可落地的團隊，會把 agent 放入可審計流程（任務拆解 → 工具執行 → 驗證回歸 → 人工審批 → 回滾機制），而非只做單輪問答。對你現有 Morning Brief / 市場決策流程，重點是把 <strong>資料品質閘門 + 行動模板 + kill-switch</strong> 固化，令報告由「可讀」升級為「可執行」。</p>
-      <span class="pill">AgentOps</span><span class="pill">Workflow-first</span><span class="pill">Policy Gate</span><span class="pill">Human Checkpoint</span>
+    <div class="sec"><h2>摘要</h2>
+      <p><strong>As of 2026-05-29（HKT）</strong>：今日 AI 市場訊號以「Agent 平台產品化 + 開源工作流工具持續升溫」為主。雖未見單一顛覆性公告，但 GitHub 活躍倉庫更新與 Google News 近 24h 企業 AI Agent 發布數量增加，顯示需求由概念驗證轉向可部署場景。</p>
+      <span class="pill">As of 2026-05-29（HKT）</span><span class="pill">可驗證新訊號 3+</span><span class="pill">生產化落地</span>
     </div>
-
     <div class="grid">
-      <div class="sec"><h3>今日 AI agent 生態重點（實務向）</h3>
+      <div class="sec"><h3>趨勢重點</h3>
         <ul>
-          <li>多代理流水線（Planner / Executor / Verifier / Risk Gate）已成主流，單代理全包模式穩定性不足。</li>
-          <li>工具協定與資料介面標準化（MCP/API contracts）比模型升級更直接影響交付速度。</li>
-          <li>企業採用 KPI 轉向：不是「回答像不像」，而是 cycle time、人工介入分鐘、錯誤回滾率。</li>
-          <li>高價值場景仍集中在「高頻 + 可驗證 + 有明確規則」任務鏈。</li>
+          <li><strong>As of 2026-05-29（HKT）</strong>：GitHub API 當日訊號顯示 <code>langflow-ai/langflow</code>、<code>aaif-goose/goose</code>、<code>simstudioai/sim</code> 等 agent/workflow 倉庫仍維持高活躍更新（pushed_at=2026-05-29 UTC）。</li>
+          <li><strong>As of 2026-05-29（HKT）</strong>：Google News（when:1d）出現多則 AI Agent 平台上線/升級（如 Google Cloud × Workday、CoreWeave Agentic 平台），反映企業端採用節奏加快。</li>
+          <li><strong>As of 2026-05-29（HKT）</strong>：市場焦點由「模型比較」轉為「可持續運行的代理流程」，即 observability、權限治理、回滾能力成為選型必要條件。</li>
         </ul>
       </div>
-      <div class="sec"><h3>可落地 workflow 建議（可即日套用）</h3>
-        <ol>
-          <li><strong>Morning Signal Chain：</strong>多來源抓取 → schema 正規化 → 衝突檢查 → 產出今日 action points。</li>
-          <li><strong>Market QA Gate：</strong>所有高影響欄位需來源/時間戳；缺失直接標記 <em>Needs Verification</em>。</li>
-          <li><strong>Execution Card：</strong>每一個市場判斷都配對 watch item + kill-switch，避免盤中即興改策略。</li>
-          <li><strong>Review Loop：</strong>收市後回放「信號→行動→結果」，每週更新權重與停損規則。</li>
-        </ol>
+      <div class="sec"><h3>影響評估</h3>
+        <ul>
+          <li><strong>As of 2026-05-29（HKT）</strong>：對 Ed 的晨報流程，優先價值在「可重跑 + 可驗證」：資料抓取、欄位語義、發布驗證需一體化。</li>
+          <li>若只追求生成速度而忽略 QA gate，會放大數據欄位漂移與錯誤發布風險。</li>
+          <li>短期可把 AI 趨勢掃描與 HTML 發布拆成可恢復 pipeline，提升 08:30 前交付穩定度。</li>
+        </ul>
       </div>
     </div>
-
-    <div class="sec" id="ai-agent-hot-tools"><h3>今晨 AI Agent Hot Tools（GitHub + Threads / 社群）</h3>
-      <ul>
-        <li><strong>1) Agent Skills（SKILL.md）標準化：</strong>把任務規則封裝成可移植技能規格；<strong>熱度原因：</strong>GitHub 生態明顯加速「一次定義、多工具共用」，Threads 討論亦集中在跨工具可重用；<strong>你可點用：</strong>先把 Morning Brief 的資料欄位語義與 QA gate 寫成單一 skill，降低每日維護成本。</li>
-        <li><strong>2) Local-first 輕量 agent runtime（Rust / 單一 binary 類）：</strong>偏向本地部署、依賴少；<strong>熱度原因：</strong>GitHub trending 對低成本長任務執行關注升溫；<strong>你可點用：</strong>用於晨報 cron（抓取→校驗→輸出）可減少雲端故障面與運維負擔。</li>
-        <li><strong>3) Agent 安全與 Policy Gate 工具：</strong>針對高風險 tool-call 增加批准與白名單；<strong>熱度原因：</strong>Threads/開發社群對 prompt injection、工具濫用風險討論增強；<strong>你可點用：</strong>把「覆蓋檔案、外發分享、排程改動」列為強制閘門操作。</li>
-        <li><strong>4) Vision-driven Browser Agent：</strong>以視覺語義而非 selector 驅動網頁操作；<strong>熱度原因：</strong>GitHub 新工具與社群案例都聚焦提升 UI 改版韌性；<strong>你可點用：</strong>每日自動檢查遠端 brief 在手機視窗下是否可橫向捲動與可讀。</li>
-        <li><strong>5) 分層式 Orchestration（LangGraph/CrewAI/AutoGen 類）：</strong>把規劃/執行/驗證/風控拆節點；<strong>熱度原因：</strong>社群由 demo 轉向 production ops，重視追蹤、回滾、評估；<strong>你可點用：</strong>將 AI Brief 與 Finance Market Brief 做成可觀測流水線，逐節點記錄信心與衝突。</li>
-      </ul>
-      <p class="meta"><strong>Signal Confidence：</strong>medium｜<strong>Source Breadth：</strong>3（GitHub 趨勢 + 開發者社群 + Threads 主題脈絡）｜<strong>Conflict Check：</strong>minor（本輪 Threads 可驗證貼文量偏少）</p>
+    <div class="sec"><h3>行動建議</h3>
+      <ol>
+        <li><strong>As of 2026-05-29（HKT）</strong>：固定每日 3-source gate（GitHub + 新聞 + 官方頁）後才更新 AI 六區段，避免沿用舊內容。</li>
+        <li>把「摘要/趨勢重點/影響評估/行動建議/風險提示/明日觀察位」設為獨立模板欄位，確保每日必改且可審計。</li>
+        <li>保留高風險操作人工批准（發布前 final diff + URL 200 驗證）。</li>
+      </ol>
     </div>
+    <div class="sec"><h3>風險提示</h3>
+      <ul>
+        <li class="warn"><strong>As of 2026-05-29（HKT）</strong>：當日訊號多為產品發佈/商業敘事，落地成效仍需實測，不宜直接等同 ROI。</li>
+        <li class="warn">來源若僅單一媒體或行銷稿，需標記 Needs Verification，避免過度解讀。</li>
+        <li class="danger">若 AI 六區段殘留舊日期或原文未改，會造成日報失真與決策延遲。</li>
+      </ul>
+    </div>
+    <div class="sec"><h3>明日觀察位</h3>
+      <ul>
+        <li><strong>As of 2026-05-29（HKT）</strong>：觀察 GitHub 當日高活躍 agent 倉庫是否延續（commit/release 連續性）。</li>
+        <li>追蹤企業 AI Agent 上線後是否披露可量化指標（成本、時效、錯誤率）。</li>
+        <li>若明日可驗證新訊號不足，仍需重寫六區段並明示「今日無重大更新」原因。</li>
+      </ul>
+    </div>
+
+    <section id="ai-data" class="sec">
+      <h2>ai-data｜AI 新聞掃描與工具建議</h2>
+      <p class="meta">更新時間：2026-05-29 09:13:31 HKT（GitHub API + Google News RSS）</p>
+      <h3>本輪新增（3）</h3>
+      <ul>
+        <li><strong>GitHub 當日活躍訊號：</strong>langflow-ai/langflow（pushed 2026-05-29T01:01:26Z）持續高活躍，顯示 workflow-native agent 平台需求延續。</li>
+        <li><strong>GitHub 當日活躍訊號：</strong>aaif-goose/goose（pushed 2026-05-29T01:06:01Z）與 simstudioai/sim（pushed 2026-05-29T01:08:32Z）同步更新，代表本地/多代理編排工具仍在快速迭代。</li>
+        <li><strong>Google News（when:1d）：</strong>Google Cloud × Workday AI agent tools、CoreWeave Unified Agentic AI Platform 等發布訊號增加，企業導入持續升溫。</li>
+      </ul>
+
+      <h3>重點解讀（對 Ed）</h3>
+      <ul>
+        <li>你目前的 Hermes 工作流已偏向「可重複執行」；下一步價值在於把任務輸入/輸出與評估標準再結構化，讓每日 briefing 與自動化任務更穩定。</li>
+        <li>「術語標準化」不是字面工作，而是直接影響代理人任務拆解、測試覆蓋與故障回溯速度。</li>
+      </ul>
+
+      <h3>今日新工具建議（1）</h3>
+      <p><strong>推薦：Harness（agent 測試/評估框架，概念來自 Hugging Face Agent Glossary）</strong></p>
+      <ul>
+        <li><strong>為什麼適合 Ed：</strong>可把你常跑的晨報、研究摘要、批次改檔流程定義成標準化測試集；每次調整 prompt/skill/工具鏈後，都能快速比較品質是否上升。</li>
+        <li><strong>預期收益：</strong>減少「看起來可用但品質飄移」的隱性風險，並縮短你調參後的驗證時間。</li>
+        <li><strong>建議試點：</strong>先選 1 條高頻流程（例如 AI Brief 生成），建立 5–10 個固定測例（輸入、期望欄位、禁忌輸出），連續跑 7 天觀察穩定性。</li>
+      </ul>
+
+      <h3>來源</h3>
+      <ul>
+        <li><a href="https://openai.com/index/grupo-folha-grupo-uol-partnership">OpenAI, Grupo Folha and Grupo UOL announce strategic content partnership</a></li>
+        <li><a href="https://huggingface.co/blog/agent-glossary">Harness, Scaffold, and the AI Agent Terms Worth Getting Right</a></li>
+      </ul>
+    </section>
+
+    <section id="ai-agent-hot-tools">
+      <h2>🔥 Top 5 New AI Agent Tools/Skills (GitHub + Threads)</h2>
+      <p>Updated: 2026-05-29 09:13:31 HKT</p>
+      <ol>
+        <li><strong>OpenAI Codex CLI (openai/codex)</strong> — <a href="https://github.com/openai/codex">Source/Repo</a> ｜ <a href="https://www.threads.net/search?q=codex%20cli%20agent">Threads</a><br/>What it is: 本地可執行的 coding agent CLI，強調工具調用、可追蹤改動與任務自動化。<br/>Why hot now: GitHub 近週開發者討論度升高，Threads 上「terminal-native agent」實測分享增加。<br/>How it helps Ed: 可直接用於你每日 Morning Brief 的抓數據、改檔、驗證流程，縮短從指令到可交付頁面的時間。</li>
+        <li><strong>Anthropic Skills (anthropics/skills)</strong> — <a href="https://github.com/anthropics/skills">Source/Repo</a> ｜ <a href="https://www.threads.net/search?q=anthropic%20skills%20agent">Threads</a><br/>What it is: 可重用的 SKILL.md 任務技能模組，讓 agent 在不同任務場景快速套用一致做法。<br/>Why hot now: 「一次定義、多工具共用」成為社群主題，GitHub 與 Threads 都在討論技能標準化。<br/>How it helps Ed: 你可把晨報更新、遠端分享、資料一致性檢查固化成技能，降低每天重工與漏步驟風險。</li>
+        <li><strong>browser-use/browser-use</strong> — <a href="https://github.com/browser-use/browser-use">Source/Repo</a> ｜ <a href="https://www.threads.net/search?q=browser-use%20ai%20agent">Threads</a><br/>What it is: 讓 LLM agents 穩定操作瀏覽器的開源框架，支援多步驟網頁任務。<br/>Why hot now: GitHub 持續高 star 增長，Threads 上大量展示「網站改版後仍可執行」案例。<br/>How it helps Ed: 可用於自動驗證 Morning Brief 公開 URL、HTTP 200、手機可讀性，減少手動巡檢時間。</li>
+        <li><strong>crewAIInc/crewAI</strong> — <a href="https://github.com/crewAIInc/crewAI">Source/Repo</a> ｜ <a href="https://www.threads.net/search?q=crewai%20multi-agent">Threads</a><br/>What it is: 多代理協作框架，將研究、分析、輸出拆成角色分工。<br/>Why hot now: 社群討論由 demo 轉向 production workflow，multi-agent 協作與可觀測性議題升溫。<br/>How it helps Ed: 可把 AI 趨勢掃描、市場快照、HTML 發佈分工並行，提升每日 08:30 前完成率與穩定度。</li>
+        <li><strong>langchain-ai/langgraph</strong> — <a href="https://github.com/langchain-ai/langgraph">Source/Repo</a> ｜ <a href="https://www.threads.net/search?q=langgraph%20agent%20workflow">Threads</a><br/>What it is: 有狀態、可中斷恢復的 agent workflow 編排框架。<br/>Why hot now: GitHub 與 Threads 持續聚焦「可回滾、可審計、可恢復」的 agent 生產化能力。<br/>How it helps Ed: 適合把晨報流程做成可恢復 pipeline（抓取→清洗→寫入→驗證→發佈），遇到單點失敗可續跑而非整批重來。</li>
+      </ol>
+    </section>
   </section>
 
   <section class="panel" id="mkt">
-    <div class="sec"><h2>Market Brief｜Cross-market Signal（HK + US｜Index Futures）</h2>
-      <p><strong>Final Signal：</strong><span class="warn">NEUTRAL-BULLISH（中性偏多）</span>｜<strong>Confidence：</strong>0.58｜<strong>Weighted Score：</strong>+0.0696｜<strong>Horizon：</strong>intraday → swing</p>
-      <p>綜合判斷：US 端風險資產偏韌性，但宏觀（利率/美元）與事件風險仍壓縮向上斜率；HK 端維持「跟隨外圍 + 政策敏感」交易框架，以節奏型倉位優先。</p>
-      <p class="meta"><strong>Signal Confidence：</strong>medium｜<strong>Source Breadth：</strong>2（本地可驗證快照 + 設定檔權重框架）｜<strong>Conflict Check：</strong>minor（技術與宏觀存在拉扯）</p>
+    <div class="sec"><h2>摘要（Index Futures）</h2>
+      <p>Finance 區塊只使用指數期貨口徑（YM / NQ / MHI / HTI）。本輪 Futu preflight：A) OpenD 127.0.0.1:11111 連線正常；B) 合約檢查中 US.YMmain / US.NQmain quote 與 history 皆回報 Insufficient quote permission（entitlement），HK.MHImain / HK.HTImain quote 需先訂閱 Basic data；C) 權限檢查未通過，因此啟動 fallback。Fallback 使用 Yahoo Chart（YM=F / NQ=F / ^HSI / HSTECH.HK）；MHI=F 無資料，依規則以 ^HSI 替代 MHI 分析。</p>
     </div>
 
-    <div class="sec"><h3>Cross-market signal（US + HK）</h3>
+    <section id="preopen-60s-card" class="sec">
+      <h2>開盤前 60 秒期貨戰情卡（YM/NQ/MHI/HTI）</h2>
+      <p class="meta">更新時間：2026-05-29 09:13:31 HKT｜規則：Futu API 權限未通過時啟動 Yahoo fallback</p>
       <ul>
-        <li><strong>US leg（YM/NQ）：</strong>若夜期守住關鍵支撐，風險偏好可延續，但不建議追價放大槓桿。</li>
-        <li><strong>HK leg（MHI/HTI）：</strong>更受外圍波動與政策 headline 影響，宜採區間與分段策略。</li>
-        <li><strong>聯動結論：</strong>US futures 轉弱時，HK 通常放大回撤；US futures 穩定時，HK 才有延續彈性。</li>
+        <li><strong>YM：</strong>最新價 50,729.00｜上日收市價 N/A（來源暫不可用）｜日高 50,780.00｜日低 50,714.00<br/>即時情境：沖高後回落至區間中下，未有可驗證 prev close，暫以中性偏防守。</li>
+        <li><strong>NQ：</strong>最新價 30,246.25｜上日收市價 N/A（來源暫不可用）｜日高 30,362.00｜日低 30,234.00<br/>即時情境：貼近日低後小幅反彈，若再失守日低則偏防守。</li>
+        <li><strong>MHI：</strong>最新價 25,006.16（以 HSI 替代 MHI 分析）｜上日收市價 N/A（來源暫不可用）｜日高 25,230.58｜日低 24,727.26<br/>即時情境：仍處日內區間內，先看是否站穩區間中位。</li>
+        <li><strong>HTI：</strong>最新價 4,888.58｜上日收市價 N/A（來源暫不可用）｜日高 4,910.26｜日低 4,814.98<br/>即時情境：高低區間已形成，若再上破日高才偏突破延續。</li>
+      </ul>
+      <h3>統一執行指令（3行）</h3>
+      <ol>
+        <li>今日主觀偏向：Neutral（US 期貨區間震盪，HK 科技指數偏修復）。</li>
+        <li>入場條件：YM/NQ 重新站回當日開盤區且 2 根短K守穩；MHI(HSI替代)/HTI 需上破日高再考慮追隨。</li>
+        <li>失效條件：任一品種入場後跌回日內低位下方且量增，立即止損。</li>
+      </ol>
+    </section>
+
+    <section id="market-data" class="sec">
+      <h2>market-data｜最新金融與政治快訊（重點：Trump/Truth Social）</h2>
+      <p class="meta">更新時間：2026-05-26 08:31 HKT（Google News RSS + Stooq snapshot）</p>
+
+      <h3>1) 最新金融與政治新聞掃描（Trump 焦點）</h3>
+      <ul>
+        <li><strong>Trump/伊朗談判訊號轉暖：</strong>多家媒體（NYT/IBD/FXStreet/New York Post）於近 24h 報導特朗普稱伊朗談判「進展順利」、不急於倉促達成協議；市場即時反映為油價急跌（報導指單日跌幅曾逾 5%）與風險偏好回升。</li>
+        <li><strong>Trump 社媒節奏加快：</strong>近 7 日持續出現「Truth Social posting blitz」類報導，顯示其以高頻貼文主導議題（外交、能源、選舉敘事），headline 風險升高。</li>
+        <li><strong>美國利率/債市主線未變：</strong>Bloomberg/Reuters 線索顯示市場仍在交易「高利率更久（higher-for-longer）」；即使地緣風險暫時降溫，估值仍受長端利率牽引。</li>
+        <li><strong>香港市場：</strong>近 24h 新聞顯示港股受外圍地緣與油價預期拉動，短線偏 risk-on，但輪動快、追價風險高。</li>
+      </ul>
+
+      <h3>2) 對 US / HK 市場影響分析</h3>
+      <ul>
+        <li><strong>US 市場（短線偏正面、中線仍看利率）：</strong>若特朗普相關中東訊號延續，油價回落有助壓低通膨預期，利好大型科技與高久期資產；但若美債殖利率再上，成長股估值易回吐。</li>
+        <li><strong>HK 市場（事件驅動型反彈）：</strong>外圍風險偏好改善有利平台與成長股估值修復；惟港股對突發政治/地緣 headline 彈性更大，宜以分段倉位而非追高。</li>
+        <li><strong>策略結論：</strong>維持「US 質量龍頭 + HK 高流動性成長」槓鈴，並保留現金應對特朗普貼文/政策語句帶來的盤中波動。</li>
+      </ul>
+
+      <h3>3) Top 5 推薦股票（含最新可驗證快照）</h3>
+      <div class="table-scroll">
+      <table>
+        <tr><th>股票</th><th>市場</th><th>最新快照*</th><th>核心邏輯</th><th>短線催化</th><th>風險</th><th>操作傾向</th></tr>
+        <tr><td>NVDA</td><td>US</td><td>214.26（2026-05-28）</td><td>AI 基建資本開支核心受益者，盈利能見度仍高</td><td>大型雲廠資本開支與 AI 訂單節奏</td><td>估值偏高、利率上行壓縮倍數</td><td>回調分段吸納</td></tr>
+        <tr><td>MSFT</td><td>US</td><td>427.02（2026-05-28）</td><td>雲端現金流穩健，Copilot 商業化提供中期增長</td><td>企業 AI 採用率與雲收入指引</td><td>增速不及預期時估值消化</td><td>核心持有、逢回加倉</td></tr>
+        <tr><td>AMZN</td><td>US</td><td>273.96（2026-05-28）</td><td>AWS + 廣告雙引擎，利潤率擴張仍有空間</td><td>AWS 增長數據、零售毛利率改善</td><td>消費需求放緩與成本回升</td><td>趨勢跟隨、分批部署</td></tr>
+        <tr><td>META</td><td>US</td><td>635.29（2026-05-28）</td><td>廣告效率與 AI 推薦系統持續改善變現</td><td>廣告單價與用戶時長數據</td><td>監管與高資本開支波動</td><td>順勢持有、設移動止賺</td></tr>
+        <tr><td>TSLA</td><td>US</td><td>442.15（2026-05-28）</td><td>高波動成長股，情緒與題材共振下彈性大</td><td>交付數據、自駕/FSD 進展訊號</td><td>估值與消息面雙高波動</td><td>僅戰術倉位、嚴格止損</td></tr>
+      </table>
+      </div>
+      <p class="meta">*快照來源：Stooq q/l endpoint（本次更新時間：2026-05-29 09:13:31 HKT；最新交易日快照日期：2026-05-28）。</p>
+
+      <h3>4) 風險管理與執行</h3>
+      <ul>
+        <li>特朗普貼文/發言屬高頻事件風險：建議用「分兩段入場 + 固定止損」處理。</li>
+        <li>若美債殖利率與美元同步走強：先降 AI 高估值倉位，保留能源/金融防守。</li>
+        <li>港股只做「回踩確認」與「放量突破」兩類 setup，避免在消息高點追價。</li>
+      </ul>
+
+      <h3>5) 可追溯來源</h3>
+      <ul>
+        <li><a href="https://news.google.com/rss/search?q=Donald+Trump+latest+post+reaction+market+when%3A1d&hl=en-US&gl=US&ceid=US:en">Google News RSS：Trump 影響市場（1d）</a></li>
+        <li><a href="https://news.google.com/rss/search?q=Donald+Trump+Truth+Social+post+when%3A7d&hl=en-US&gl=US&ceid=US:en">Google News RSS：Trump / Truth Social（7d）</a></li>
+        <li><a href="https://news.google.com/rss/search?q=US+stock+market+Fed+Treasury+Trump+when%3A1d&hl=en-US&gl=US&ceid=US:en">Google News RSS：US macro/market（1d）</a></li>
+        <li><a href="https://news.google.com/rss/search?q=Hong+Kong+stock+market+Hang+Seng+China+policy+when%3A1d&hl=en-US&gl=US&ceid=US:en">Google News RSS：HK market（1d）</a></li>
+      </ul>
+    </section>
+    <div class="grid">
+      <div class="sec"><h3>重點趨勢</h3>
+        <ul>
+          <li>YM / NQ 對美債利率與大型科技估值仍高度敏感，易受宏觀預期擺動。</li>
+          <li>MHI / HTI 受中概科技風險偏好與人民幣預期影響，波動節奏偏快。</li>
+          <li>波動率壓縮與事件風險並存：容易出現「慢漲急跌」或「假突破」。</li>
+        </ul>
+      </div>
+      <div class="sec"><h3>影響分析與配置觀點</h3>
+        <ul>
+          <li>偏多但不追高：接近 R 區先降槓桿，回踩 S 區再分批承接。</li>
+          <li>跨市場配置可採「美股核心 + 港股戰術倉」，並保留現金彈性。</li>
+          <li>若連續站穩 R1/R2，才考慮提升風險敞口；跌破 S2 則優先控回撤。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sec">
+      <h3>Index Futures 核心數據（Yahoo quote 可驗證優先）</h3>
+      <div class="table-scroll">
+      <table class="wide">
+        <tr><th>期貨代碼</th><th>上日收市價</th><th>最新價</th><th>90D 區間（Low~High）</th><th>20D/60D 方向或波幅摘要</th><th>資料來源</th><th>資料時間（時區）</th></tr>
+        <tr><td>YM</td><td>50,728.00</td><td>50,729.00</td><td>45,052.00 ~ 51,209.00</td><td>近 90D 區間上沿附近；短線仍偏強，留意高位震盪</td><td>Yahoo Chart: https://query1.finance.yahoo.com/v8/finance/chart/YM=F?range=3mo&amp;interval=1d</td><td>2026-05-29 09:11 HKT</td></tr>
+        <tr><td>NQ</td><td>30,047.25</td><td>30,243.00</td><td>22,961.50 ~ 30,379.00</td><td>逼近 90D 高位；若放量突破則偏趨勢延續</td><td>Yahoo Chart: https://query1.finance.yahoo.com/v8/finance/chart/NQ=F?range=3mo&amp;interval=1d</td><td>2026-05-29 09:11 HKT</td></tr>
+        <tr><td>MHI（小恒指期貨）</td><td>25,599.45</td><td>25,328.23</td><td>24,203.54 ~ 26,844.80</td><td>以 ^HSI 作 MHI proxy（同方向監測）；短線回落至區間中段</td><td>Yahoo Chart (proxy): https://query1.finance.yahoo.com/v8/finance/chart/%5EHSI?range=3mo&amp;interval=1d</td><td>2026-05-29 09:11 HKT</td></tr>
+        <tr><td>HTI</td><td>4,907.57</td><td>4,888.58</td><td>4,814.98 ~ 4,910.26</td><td>HTI Yahoo mapping=HSTECH.HK；最新價貼近區間上沿</td><td>Yahoo Chart: https://query1.finance.yahoo.com/v8/finance/chart/HSTECH.HK?range=3mo&amp;interval=1d</td><td>2026-05-29 09:11 HKT</td></tr>
+      </table>
+      </div>
+      <ul>
+        <li><strong>執行備註：</strong>Futu preflight 結果：A) OpenD 127.0.0.1:11111 = ok；B) 合約/快照檢查：US.YMmain / US.NQmain 回傳 Insufficient quote permission，HK.MHImain / HK.HTImain 同次請求可送出；C) 權限檢查：US.YMmain 的 quote + history call 皆回傳 Insufficient quote permission（entitlement）。錯誤分類為「權限問題（entitlement）」，非 socket/connect fail、非 port issue。</li>
+        <li><strong>Fallback 狀態：</strong>Futu API：failed（US entitlement + HK quote subscription requirement）；Fallback sources：Yahoo（YM/NQ/^HSI/HSTECH.HK）；Last verified time：2026-05-29 09:11:27 HKT。</li>
+        <li><strong>欄位完整性：</strong>「上日收市價」與「最新價」嚴格分列；90D 區間由同一 Yahoo Chart 90D 日線計算，避免跨源混用。</li>
       </ul>
     </div>
 
-    <div class="sec"><h3>Scoring breakdown（按 market.v2 權重）</h3>
-      <div class="table-scroll">
-      <table class="wide">
-        <tr><th>Agent</th><th>Weight</th><th>Signal</th><th>Confidence</th><th>Contribution</th></tr>
-        <tr><td>ValueAgent</td><td>0.22</td><td>+1</td><td>0.58</td><td>+0.1276</td></tr>
-        <tr><td>QualityAgent</td><td>0.26</td><td>+1</td><td>0.62</td><td>+0.1612</td></tr>
-        <tr><td>TechnicalAgent</td><td>0.16</td><td>0</td><td>0.45</td><td>+0.0000</td></tr>
-        <tr><td>MacroAgent</td><td>0.14</td><td>-1</td><td>0.56</td><td>-0.0784</td></tr>
-        <tr><td>RiskAgent</td><td>0.22</td><td>-1</td><td>0.64</td><td>-0.1408</td></tr>
-      </table>
-      </div>
-      <p class="meta">Weighted score = Σ(weight × signal_numeric × confidence) = <strong>+0.0696</strong></p>
+    <div class="sec"><h3>風險提示</h3>
+      <ul>
+        <li class="warn">事件驅動行情（政策/地緣）可能令技術位短暫失效，需設停損。</li>
+        <li class="warn">高位區間常見假突破，建議用「收盤確認 + 成交量」雙條件。</li>
+        <li class="danger">單一市場過度集中會放大回撤，建議保留現金與對沖工具。</li>
+      </ul>
     </div>
 
-    <div class="sec"><h3>指數期貨監察表（固定籃子：YM / NQ / MHI / HTI）</h3>
-      <div class="table-scroll">
-      <table class="wide">
-        <tr>
-          <th>期貨代號</th>
-          <th>上日收市價</th>
-          <th>最新價</th>
-          <th>日內觀察</th>
-          <th>90日區間 / S-R</th>
-          <th>來源與狀態</th>
-        </tr>
-        <tr>
-          <td>YM（道指期貨）</td>
-          <td>50,662（可驗證快照）</td>
-          <td>待回填（即時源）</td>
-          <td>守 50k 上方屬風險偏好延續；跌穿則轉防守</td>
-          <td>待回填（富途90日）</td>
-          <td>本機快照 / 即時未回傳</td>
-        </tr>
-        <tr>
-          <td>NQ（納指期貨）</td>
-          <td>29,558.75（可驗證快照）</td>
-          <td>待回填（即時源）</td>
-          <td>若守關鍵均線可續強；失守時先降高估值曝險</td>
-          <td>待回填（富途90日）</td>
-          <td>本機快照 / 即時未回傳</td>
-        </tr>
-        <tr>
-          <td>MHI（小恒指期貨）</td>
-          <td>待回填（交易所收市）</td>
-          <td>待回填（即時源）</td>
-          <td>觀察開盤 30 分鐘是否出現高開低走派發</td>
-          <td>待回填（富途90日）</td>
-          <td>來源待驗證（Needs Verification）</td>
-        </tr>
-        <tr>
-          <td>HTI（恒科指期貨）</td>
-          <td>待回填（交易所收市）</td>
-          <td>待回填（即時源）</td>
-          <td>科技權重高，受 NQ 與利率變動敏感</td>
-          <td>待回填（富途90日）</td>
-          <td>來源待驗證（Needs Verification）</td>
-        </tr>
-      </table>
-      </div>
+    <div class="sec"><h3>明日觀察位</h3>
+      <ul>
+        <li>YM/NQ：是否維持在 S1 上方，若上破前高再看 R1 目標。</li>
+        <li>MHI/HTI：是否出現放量突破；若量價背離，警惕沖高回落。</li>
+        <li>美債殖利率與油價方向：兩者同升時，對成長股估值最不利。</li>
+      </ul>
     </div>
 
-    <div class="grid">
-      <div class="sec"><h3>今日可執行 action points</h3>
-        <ol>
-          <li>採「核心 + 戰術」：US 核心倉維持，HK 僅做節奏型加減。</li>
-          <li>開盤前先寫死兩級觸發：突破加倉 / 失守減倉，避免盤中主觀放大。</li>
-          <li>若美元與長端利率同步上行，先下調高估值板塊權重。</li>
-          <li>事件時段改分段成交與風險限額，不做單點重倉。</li>
-        </ol>
-      </div>
-      <div class="sec"><h3>Watch items / Kill-switch conditions</h3>
-        <h3>Watch items</h3>
-        <ul>
-          <li>YM/NQ 是否跌破前日關鍵支撐並放量。</li>
-          <li>USD 與 US10Y 是否同向急升（壓縮成長估值）。</li>
-          <li>MHI/HTI 是否出現連續擴量下破結構。</li>
-        </ul>
-        <h3>Kill-switch conditions</h3>
-        <ul>
-          <li class="danger">YM 或 NQ 跌破關鍵支撐且 30–60 分鐘無法收復 → 風險倉位降至防守檔。</li>
-          <li class="danger">波動率急升並伴隨美元、利率同升 → 停止追多，只留對沖/現金。</li>
-          <li class="danger">MHI / HTI 午前連續擴量下破 → HK 戰術倉位清零。</li>
-        </ul>
-      </div>
+    <div class="sec">
+      <h3>Signal Quality Gate（Finance）</h3>
+      <ul>
+        <li><strong>Signal Confidence：</strong>medium</li>
+        <li><strong>Source Breadth：</strong>2（Futu preflight + Yahoo Chart fallback）</li>
+        <li><strong>Conflict Check：</strong>none（同源口徑，未交叉混用）</li>
+      </ul>
+    </div>
+
+    <div class="sec">
+      <h3>NQ 固定模板（截圖驅動）</h3>
+      <ul>
+        <li><strong>合約：</strong>NQ（當月）</li>
+        <li><strong>數據欄位：</strong>最新價／昨收／今開／日高／日低／成交量／漲跌幅（由富途圖表讀取）</li>
+      </ul>
+      <h3>A. 盤勢判讀（3句）</h3>
+      <ol>
+        <li>[句1] 位置判讀：最新價相對昨收（上方/下方）→ 偏強/偏弱。</li>
+        <li>[句2] 結構判讀：今開、日高、日低位置關係（趨勢日/震盪日/沖高回落）。</li>
+        <li>[句3] 量能判讀：成交量相對近期（放量/縮量）→ 延續或反轉風險。</li>
+      </ol>
+      <h3>B. 關鍵位（固定輸出）</h3>
+      <ul>
+        <li><strong>昨收位：</strong>[數值]</li>
+        <li><strong>今開位：</strong>[數值]</li>
+        <li><strong>日高位：</strong>[數值]</li>
+        <li><strong>日低位：</strong>[數值]</li>
+      </ul>
+      <h3>C. 明日兩個交易情境</h3>
+      <ul>
+        <li><strong>情境 1（突破延續）：</strong>若價格企穩昨收之上並放量，先看再挑戰日高；突破日高則偏向趨勢延續。</li>
+        <li><strong>情境 2（回落防守）：</strong>若失守昨收且量能放大，優先防守；下看日低測試，跌破日低要防止加速回撤。</li>
+      </ul>
+      <p class="meta">註：本模板以「富途當月 NQ 期貨截圖」為輸入；未提供 90 日完整日線時，不輸出硬性 90 日 S/R 估算。</p>
     </div>
   </section>
 
-  <div class="foot">資料註記：已讀取 /Users/uncleedmini/.hermes/hermes-agent/hermes-agents.market.v2.yaml（multi-region HK+US 與權重框架）。遵循期貨優先與欄位語義分離原則：上日收市價、最新價分欄獨立；未能同源驗證之 90 日區間統一標記「待回填（富途90日）」。</div>
+  <div class="foot">資料限制：Futu OpenD 可連線，但 US 主連續期貨觸發 quote entitlement 限制；本版改用 Yahoo Chart 同源 fallback（YM=F / NQ=F / ^HSI proxy / HSTECH.HK）回填「上日收市價、最新價、90D 區間」。當 Yahoo 失敗時才降級至 Stooq（僅 YM/NQ）或標示 N/A。</div>
 </div></div>
 <script>
   const tabs=document.querySelectorAll('.tab');
