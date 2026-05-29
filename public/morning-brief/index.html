@@ -30,7 +30,7 @@
 <div class="wrap"><div class="card">
   <div class="hd">
     <h1>Morning Brief（長版）</h1>
-    <div class="meta">日期：2026-05-29（系統時區）｜版本：AI Brief + Finance Market Brief 雙分頁</div>
+    <div class="meta">日期：2026-05-29（HKT）｜版本：AI Brief + Finance Market Brief 雙分頁</div>
   </div>
   <div class="tabs">
     <button class="tab active" data-tab="ai">AI Brief</button>
@@ -39,44 +39,44 @@
 
   <section class="panel active" id="ai">
     <div class="sec"><h2>摘要</h2>
-      <p><strong>As of 2026-05-29（HKT）</strong>：今日 AI 市場訊號以「Agent 平台產品化 + 開源工作流工具持續升溫」為主。雖未見單一顛覆性公告，但 GitHub 活躍倉庫更新與 Google News 近 24h 企業 AI Agent 發布數量增加，顯示需求由概念驗證轉向可部署場景。</p>
-      <span class="pill">As of 2026-05-29（HKT）</span><span class="pill">可驗證新訊號 3+</span><span class="pill">生產化落地</span>
+      <p><strong>As of 2026-05-29（HKT）</strong>：今日有可驗證新訊號，重點係「企業 Agent 產品化」與「開源 workflow 工具持續活躍」並行。GitHub 三個高關聯 repo 今日仍有 push、Google News 近 24 小時有企業級 agent 發布消息，整體判斷為穩步升溫、非單點爆發。</p>
+      <span class="pill">As of 2026-05-29（HKT）</span><span class="pill">可驗證新訊號 3+</span><span class="pill">企業落地加速</span>
     </div>
     <div class="grid">
       <div class="sec"><h3>趨勢重點</h3>
         <ul>
-          <li><strong>As of 2026-05-29（HKT）</strong>：GitHub API 當日訊號顯示 <code>langflow-ai/langflow</code>、<code>aaif-goose/goose</code>、<code>simstudioai/sim</code> 等 agent/workflow 倉庫仍維持高活躍更新（pushed_at=2026-05-29 UTC）。</li>
-          <li><strong>As of 2026-05-29（HKT）</strong>：Google News（when:1d）出現多則 AI Agent 平台上線/升級（如 Google Cloud × Workday、CoreWeave Agentic 平台），反映企業端採用節奏加快。</li>
-          <li><strong>As of 2026-05-29（HKT）</strong>：市場焦點由「模型比較」轉為「可持續運行的代理流程」，即 observability、權限治理、回滾能力成為選型必要條件。</li>
+          <li><strong>As of 2026-05-29（HKT）</strong>：GitHub repo 更新仍密集：<code>langflow-ai/langflow</code>（pushed 2026-05-29T01:47:54Z）、<code>aaif-goose/goose</code>（2026-05-29T02:33:05Z）、<code>simstudioai/sim</code>（2026-05-29T02:19:11Z）。</li>
+          <li><strong>As of 2026-05-29（HKT）</strong>：Google News（when:1d）顯示 Google Cloud × Workday 的 AI agent tools、CoreWeave Unified Agentic AI 平台等企業訊號持續出現。</li>
+          <li><strong>As of 2026-05-29（HKT）</strong>：社群討論主軸維持在可治理（權限、觀測、回滾）而非純 demo，代表 adoption 重點已轉到穩定運營。</li>
         </ul>
       </div>
       <div class="sec"><h3>影響評估</h3>
         <ul>
-          <li><strong>As of 2026-05-29（HKT）</strong>：對 Ed 的晨報流程，優先價值在「可重跑 + 可驗證」：資料抓取、欄位語義、發布驗證需一體化。</li>
-          <li>若只追求生成速度而忽略 QA gate，會放大數據欄位漂移與錯誤發布風險。</li>
-          <li>短期可把 AI 趨勢掃描與 HTML 發布拆成可恢復 pipeline，提升 08:30 前交付穩定度。</li>
+          <li><strong>As of 2026-05-29（HKT）</strong>：對 Ed，最直接影響是晨報流程應強化「可追溯來源 + 欄位語義鎖定 + 發布驗證」三件事。</li>
+          <li>如果只跟熱門功能而不做 gate，會提高欄位漂移與錯配風險（特別是市場數據欄位）。</li>
+          <li>短期最佳槓桿：把抓取→改寫→驗證→發布串成單一可重跑 pipeline。</li>
         </ul>
       </div>
     </div>
     <div class="sec"><h3>行動建議</h3>
       <ol>
-        <li><strong>As of 2026-05-29（HKT）</strong>：固定每日 3-source gate（GitHub + 新聞 + 官方頁）後才更新 AI 六區段，避免沿用舊內容。</li>
-        <li>把「摘要/趨勢重點/影響評估/行動建議/風險提示/明日觀察位」設為獨立模板欄位，確保每日必改且可審計。</li>
-        <li>保留高風險操作人工批准（發布前 final diff + URL 200 驗證）。</li>
+        <li><strong>As of 2026-05-29（HKT）</strong>：每日固定先過 3-source gate（GitHub API + 媒體消息 + 官方公告/產品頁）才寫 AI 六區段。</li>
+        <li>AI 六區段保持每日重寫，並在每段加 As-of 日期，避免殘留舊快照文字。</li>
+        <li>發布前保留 URL HTTP 200 + 關鍵字比對（日期/數值）作最後驗證。</li>
       </ol>
     </div>
     <div class="sec"><h3>風險提示</h3>
       <ul>
-        <li class="warn"><strong>As of 2026-05-29（HKT）</strong>：當日訊號多為產品發佈/商業敘事，落地成效仍需實測，不宜直接等同 ROI。</li>
-        <li class="warn">來源若僅單一媒體或行銷稿，需標記 Needs Verification，避免過度解讀。</li>
-        <li class="danger">若 AI 六區段殘留舊日期或原文未改，會造成日報失真與決策延遲。</li>
+        <li class="warn"><strong>As of 2026-05-29（HKT）</strong>：今日新訊號偏產品發布與媒體報導，商業成效仍需後續 KPI 驗證。</li>
+        <li class="warn">若來源只有單一新聞稿，需標記 Needs Verification，避免把 PR 訊號當成落地成果。</li>
+        <li class="danger">六區段若任何一段沿用舊文，會直接降低晨報可用性與決策準確度。</li>
       </ul>
     </div>
     <div class="sec"><h3>明日觀察位</h3>
       <ul>
-        <li><strong>As of 2026-05-29（HKT）</strong>：觀察 GitHub 當日高活躍 agent 倉庫是否延續（commit/release 連續性）。</li>
-        <li>追蹤企業 AI Agent 上線後是否披露可量化指標（成本、時效、錯誤率）。</li>
-        <li>若明日可驗證新訊號不足，仍需重寫六區段並明示「今日無重大更新」原因。</li>
+        <li><strong>As of 2026-05-29（HKT）</strong>：觀察上述三個 GitHub repo 是否維持連續 push/release。</li>
+        <li>留意企業 Agent 發布是否開始披露可量化成效（成本下降、處理時效、錯誤率）。</li>
+        <li>若明日無重大增量，仍需重寫六區段並明示「今日無重大更新」原因。</li>
       </ul>
     </div>
 
@@ -131,12 +131,12 @@
 
     <section id="preopen-60s-card" class="sec">
       <h2>開盤前 60 秒期貨戰情卡（YM/NQ/MHI/HTI）</h2>
-      <p class="meta">更新時間：2026-05-29 09:13:31 HKT｜規則：Futu API 權限未通過時啟動 Yahoo fallback</p>
+      <p class="meta">更新時間：2026-05-29 10:39:45 HKT｜規則：Futu API 權限未通過時啟動 Yahoo fallback</p>
       <ul>
-        <li><strong>YM：</strong>最新價 50,729.00｜上日收市價 N/A（來源暫不可用）｜日高 50,780.00｜日低 50,714.00<br/>即時情境：沖高後回落至區間中下，未有可驗證 prev close，暫以中性偏防守。</li>
-        <li><strong>NQ：</strong>最新價 30,246.25｜上日收市價 N/A（來源暫不可用）｜日高 30,362.00｜日低 30,234.00<br/>即時情境：貼近日低後小幅反彈，若再失守日低則偏防守。</li>
-        <li><strong>MHI：</strong>最新價 25,006.16（以 HSI 替代 MHI 分析）｜上日收市價 N/A（來源暫不可用）｜日高 25,230.58｜日低 24,727.26<br/>即時情境：仍處日內區間內，先看是否站穩區間中位。</li>
-        <li><strong>HTI：</strong>最新價 4,888.58｜上日收市價 N/A（來源暫不可用）｜日高 4,910.26｜日低 4,814.98<br/>即時情境：高低區間已形成，若再上破日高才偏突破延續。</li>
+        <li><strong>YM：</strong>最新價 50,739.00｜上日收市價 50,743.00｜日高 50,780.00｜日低 50,704.00<br/>即時情境：最新價略低於上日收市，暫屬 Neutral，需重新站回昨收確認延續。</li>
+        <li><strong>NQ：</strong>最新價 30,241.00｜上日收市價 30,307.00｜日高 30,362.00｜日低 30,216.50<br/>即時情境：跌穿 prev close 且貼近日低，偏防守；若反彈重上昨收再看修復。</li>
+        <li><strong>MHI：</strong>最新價 25,096.21（以 HSI 替代 MHI 分析）｜上日收市價 25,006.16｜日高 25,209.33｜日低 25,075.36<br/>即時情境：Above prev close 但未破日高，偏震盪偏強，防沖高回落。</li>
+        <li><strong>HTI：</strong>最新價 4,897.20｜上日收市價 N/A（來源暫不可用）｜日高 4,971.37｜日低 4,876.31<br/>即時情境：資料窗僅得單日有效 K，先以區間交易處理，待回填上日收市價再確認方向。</li>
       </ul>
       <h3>統一執行指令（3行）</h3>
       <ol>
@@ -176,7 +176,7 @@
         <tr><td>TSLA</td><td>US</td><td>442.15（2026-05-28）</td><td>高波動成長股，情緒與題材共振下彈性大</td><td>交付數據、自駕/FSD 進展訊號</td><td>估值與消息面雙高波動</td><td>僅戰術倉位、嚴格止損</td></tr>
       </table>
       </div>
-      <p class="meta">*快照來源：Stooq q/l endpoint（本次更新時間：2026-05-29 09:13:31 HKT；最新交易日快照日期：2026-05-28）。</p>
+      <p class="meta">*快照來源：Stooq q/l endpoint（本次更新時間：2026-05-29 10:39:45 HKT；最新交易日快照日期：2026-05-28）。</p>
 
       <h3>4) 風險管理與執行</h3>
       <ul>
@@ -214,16 +214,16 @@
       <h3>Index Futures 核心數據（Yahoo quote 可驗證優先）</h3>
       <div class="table-scroll">
       <table class="wide">
-        <tr><th>期貨代碼</th><th>上日收市價</th><th>最新價</th><th>90D 區間（Low~High）</th><th>20D/60D 方向或波幅摘要</th><th>資料來源</th><th>資料時間（時區）</th></tr>
-        <tr><td>YM</td><td>50,728.00</td><td>50,729.00</td><td>45,052.00 ~ 51,209.00</td><td>近 90D 區間上沿附近；短線仍偏強，留意高位震盪</td><td>Yahoo Chart: https://query1.finance.yahoo.com/v8/finance/chart/YM=F?range=3mo&amp;interval=1d</td><td>2026-05-29 09:11 HKT</td></tr>
-        <tr><td>NQ</td><td>30,047.25</td><td>30,243.00</td><td>22,961.50 ~ 30,379.00</td><td>逼近 90D 高位；若放量突破則偏趨勢延續</td><td>Yahoo Chart: https://query1.finance.yahoo.com/v8/finance/chart/NQ=F?range=3mo&amp;interval=1d</td><td>2026-05-29 09:11 HKT</td></tr>
-        <tr><td>MHI（小恒指期貨）</td><td>25,599.45</td><td>25,328.23</td><td>24,203.54 ~ 26,844.80</td><td>以 ^HSI 作 MHI proxy（同方向監測）；短線回落至區間中段</td><td>Yahoo Chart (proxy): https://query1.finance.yahoo.com/v8/finance/chart/%5EHSI?range=3mo&amp;interval=1d</td><td>2026-05-29 09:11 HKT</td></tr>
-        <tr><td>HTI</td><td>4,907.57</td><td>4,888.58</td><td>4,814.98 ~ 4,910.26</td><td>HTI Yahoo mapping=HSTECH.HK；最新價貼近區間上沿</td><td>Yahoo Chart: https://query1.finance.yahoo.com/v8/finance/chart/HSTECH.HK?range=3mo&amp;interval=1d</td><td>2026-05-29 09:11 HKT</td></tr>
+        <tr><th>期貨代碼</th><th>上日收市價</th><th>最新價</th><th>90D 區間（Low~High）</th><th>R1/R2/R3｜S1/S2/S3</th><th>20D/60D 方向或波幅摘要</th><th>資料來源</th><th>資料時間（時區）</th></tr>
+        <tr><td>YM</td><td>50,743.00</td><td>50,739.00</td><td>45,052.00 ~ 51,209.00</td><td>50,780.67 / 50,818.33 / 50,856.67｜50,704.67 / 50,666.33 / 50,628.67</td><td>接近區間上沿；若失守 S1，短線轉震盪偏弱</td><td>Yahoo Chart: https://query1.finance.yahoo.com/v8/finance/chart/YM=F?range=3mo&amp;interval=1d</td><td>2026-05-29 10:40 HKT</td></tr>
+        <tr><td>NQ</td><td>30,307.00</td><td>30,241.00</td><td>22,961.50 ~ 30,379.00</td><td>30,373.83 / 30,440.67 / 30,519.33｜30,228.33 / 30,149.67 / 30,082.83</td><td>高位震盪；跌破 S1 需防守，重上昨收才轉穩</td><td>Yahoo Chart: https://query1.finance.yahoo.com/v8/finance/chart/NQ=F?range=3mo&amp;interval=1d</td><td>2026-05-29 10:40 HKT</td></tr>
+        <tr><td>MHI（小恒指期貨）</td><td>25,006.16</td><td>25,096.21</td><td>24,203.54 ~ 26,844.80</td><td>25,118.54 / 25,230.92 / 25,252.51｜24,984.57 / 24,962.98 / 24,850.60</td><td>以 ^HSI 作 MHI proxy（同方向監測）；暫在區間中上段</td><td>Yahoo Chart (proxy): https://query1.finance.yahoo.com/v8/finance/chart/%5EHSI?range=3mo&amp;interval=1d</td><td>2026-05-29 10:40 HKT</td></tr>
+        <tr><td>HTI</td><td>N/A（來源暫不可用）</td><td>4,897.20</td><td>待回填（富途90日）</td><td>N/A（來源暫不可用）</td><td>HTI Yahoo mapping=HSTECH.HK；單日資料可驗證，90D/SR 待同源回填</td><td>Yahoo Chart: https://query1.finance.yahoo.com/v8/finance/chart/HSTECH.HK?range=3mo&amp;interval=1d</td><td>2026-05-29 10:40 HKT</td></tr>
       </table>
       </div>
       <ul>
-        <li><strong>執行備註：</strong>Futu preflight 結果：A) OpenD 127.0.0.1:11111 = ok；B) 合約/快照檢查：US.YMmain / US.NQmain 回傳 Insufficient quote permission，HK.MHImain / HK.HTImain 同次請求可送出；C) 權限檢查：US.YMmain 的 quote + history call 皆回傳 Insufficient quote permission（entitlement）。錯誤分類為「權限問題（entitlement）」，非 socket/connect fail、非 port issue。</li>
-        <li><strong>Fallback 狀態：</strong>Futu API：failed（US entitlement + HK quote subscription requirement）；Fallback sources：Yahoo（YM/NQ/^HSI/HSTECH.HK）；Last verified time：2026-05-29 09:11:27 HKT。</li>
+        <li><strong>執行備註：</strong>Futu preflight 結果：A) OpenD 127.0.0.1:11111 = ok；B) 合約可解析/快照檢查：US.YMmain / US.NQmain 回傳 Insufficient quote permission，HK.MHImain / HK.HTImain 回傳需先訂閱 Basic data；C) 權限檢查：US.YMmain 的 quote + history call 皆回傳 Insufficient quote permission（entitlement，非連線/port 問題）。</li>
+        <li><strong>Fallback 狀態：</strong>Futu API：failed（entitlement + HK subscription requirement）；Fallback sources：Yahoo（YM/NQ/^HSI/HSTECH.HK）/ Stooq（Top-5 股票快照）；Last verified time：2026-05-29 10:40:51 HKT。</li>
         <li><strong>欄位完整性：</strong>「上日收市價」與「最新價」嚴格分列；90D 區間由同一 Yahoo Chart 90D 日線計算，避免跨源混用。</li>
       </ul>
     </div>
@@ -267,10 +267,10 @@
       </ol>
       <h3>B. 關鍵位（固定輸出）</h3>
       <ul>
-        <li><strong>昨收位：</strong>[數值]</li>
-        <li><strong>今開位：</strong>[數值]</li>
-        <li><strong>日高位：</strong>[數值]</li>
-        <li><strong>日低位：</strong>[數值]</li>
+        <li><strong>昨收位：</strong>30,307.00</li>
+        <li><strong>今開位：</strong>30,328.00</li>
+        <li><strong>日高位：</strong>30,362.00</li>
+        <li><strong>日低位：</strong>30,216.50</li>
       </ul>
       <h3>C. 明日兩個交易情境</h3>
       <ul>
