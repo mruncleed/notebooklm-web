@@ -215,10 +215,10 @@
       <div class="table-scroll">
       <table class="wide">
         <tr><th>期貨代碼</th><th>上日收市價</th><th>最新價</th><th>90D 區間（Low~High）</th><th>R1/R2/R3｜S1/S2/S3</th><th>20D/60D 方向或波幅摘要</th><th>資料來源</th><th>資料時間（時區）</th></tr>
-        <tr><td>YM</td><td>N/A（來源暫不可用）</td><td>N/A（來源暫不可用）</td><td>待回填（富途90日）</td><td>N/A（來源暫不可用）</td><td>資料不足，待回填後更新方向判讀</td><td>Yahoo Chart: https://query1.finance.yahoo.com/v8/finance/chart/YM=F?range=3mo&amp;interval=1d</td><td>2026-05-30 08:31:38 HKT</td></tr>
-        <tr><td>NQ</td><td>N/A（來源暫不可用）</td><td>N/A（來源暫不可用）</td><td>待回填（富途90日）</td><td>N/A（來源暫不可用）</td><td>資料不足，待回填後更新方向判讀</td><td>Yahoo Chart: https://query1.finance.yahoo.com/v8/finance/chart/NQ=F?range=3mo&amp;interval=1d</td><td>2026-05-30 08:31:38 HKT</td></tr>
-        <tr><td>MHI（小恒指期貨）</td><td>N/A（來源暫不可用）</td><td>N/A（以 HSI 替代 MHI 分析；來源暫不可用）</td><td>待回填（富途90日）</td><td>N/A（來源暫不可用）</td><td>本輪以 ^HSI 作 proxy 亦未取回有效值</td><td>Yahoo Chart (proxy): https://query1.finance.yahoo.com/v8/finance/chart/%5EHSI?range=3mo&amp;interval=1d</td><td>2026-05-30 08:31:38 HKT</td></tr>
-        <tr><td>HTI</td><td>N/A（來源暫不可用）</td><td>N/A（來源暫不可用）</td><td>待回填（富途90日）</td><td>N/A（來源暫不可用）</td><td>HTI Yahoo mapping=HSTECH.HK；來源不可用時不估算</td><td>Yahoo Chart: https://query1.finance.yahoo.com/v8/finance/chart/HSTECH.HK?range=3mo&amp;interval=1d</td><td>2026-05-30 08:31:38 HKT</td></tr>
+        <tr><td>YM</td><td>50,743.00</td><td>51,053.00</td><td>45,424.00 ~ 51,053.00</td><td>R1 51,227.33 / R2 51,401.67 / R3 51,663.33 ｜ S1 50,791.33 / S2 50,529.67 / S3 50,355.33</td><td>以 Yahoo 90D 收市序列計算區間與 pivot 位</td><td>Yahoo Chart: https://query1.finance.yahoo.com/v8/finance/chart/YM=F?range=3mo&amp;interval=1d</td><td>2026-05-30 09:40:17 HKT</td></tr>
+        <tr><td>NQ</td><td>30,307.00</td><td>30,389.50</td><td>23,139.75 ~ 30,389.50</td><td>R1 30,544.83 / R2 30,700.17 / R3 30,864.33 ｜ S1 30,225.33 / S2 30,061.17 / S3 29,905.83</td><td>以 Yahoo 90D 收市序列計算區間與 pivot 位</td><td>Yahoo Chart: https://query1.finance.yahoo.com/v8/finance/chart/NQ=F?range=3mo&amp;interval=1d</td><td>2026-05-30 09:40:17 HKT</td></tr>
+        <tr><td>MHI（小恒指期貨）</td><td>25,006.16</td><td>25,182.39</td><td>24,382.47 ~ 26,626.28</td><td>R1 25,311.88 / R2 25,441.37 / R3 25,569.41 ｜ S1 25,054.35 / S2 24,926.31 / S3 24,796.82</td><td>以 ^HSI 作 MHI proxy 計算（同源 Yahoo）</td><td>Yahoo Chart (proxy): https://query1.finance.yahoo.com/v8/finance/chart/%5EHSI?range=3mo&amp;interval=1d</td><td>2026-05-30 09:40:17 HKT</td></tr>
+        <tr><td>HTI</td><td>4,884.23</td><td>4,884.23</td><td>4,884.23 ~ 4,884.23</td><td>R1 4,954.15 / R2 5,024.08 / R3 5,067.37 ｜ S1 4,840.93 / S2 4,797.64 / S3 4,727.71</td><td>HTI Yahoo mapping=HSTECH.HK（同源計算）</td><td>Yahoo Chart: https://query1.finance.yahoo.com/v8/finance/chart/HSTECH.HK?range=3mo&amp;interval=1d</td><td>2026-05-30 09:40:17 HKT</td></tr>
       </table>
       </div>
       <ul>
@@ -267,10 +267,10 @@
       </ol>
       <h3>B. 關鍵位（固定輸出）</h3>
       <ul>
-        <li><strong>昨收位：</strong>N/A（來源暫不可用）</li>
-        <li><strong>今開位：</strong>N/A（來源暫不可用）</li>
-        <li><strong>日高位：</strong>N/A（來源暫不可用）</li>
-        <li><strong>日低位：</strong>N/A（來源暫不可用）</li>
+        <li>X,307.00</li>
+        <li>X,328.00</li>
+        <li>X,536.00</li>
+        <li>X,216.50</li>
       </ul>
       <h3>C. 明日兩個交易情境</h3>
       <ul>
