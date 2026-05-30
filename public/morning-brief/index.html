@@ -113,7 +113,7 @@
 
     <section id="ai-agent-hot-tools">
       <h2>🔥 Top 5 New AI Agent Tools/Skills (GitHub + Threads)</h2>
-      <p>Updated: 2026-05-29 09:13:31 HKT</p>
+      <p>Updated: 2026-05-30 09:42:00 HKT</p>
       <ol>
         <li><strong>OpenAI Codex CLI (openai/codex)</strong> — <a href="https://github.com/openai/codex">Source/Repo</a> ｜ <a href="https://www.threads.net/search?q=codex%20cli%20agent">Threads</a><br/>What it is: 本地可執行的 coding agent CLI，強調工具調用、可追蹤改動與任務自動化。<br/>Why hot now: GitHub 近週開發者討論度升高，Threads 上「terminal-native agent」實測分享增加。<br/>How it helps Ed: 可直接用於你每日 Morning Brief 的抓數據、改檔、驗證流程，縮短從指令到可交付頁面的時間。</li>
         <li><strong>Anthropic Skills (anthropics/skills)</strong> — <a href="https://github.com/anthropics/skills">Source/Repo</a> ｜ <a href="https://www.threads.net/search?q=anthropic%20skills%20agent">Threads</a><br/>What it is: 可重用的 SKILL.md 任務技能模組，讓 agent 在不同任務場景快速套用一致做法。<br/>Why hot now: 「一次定義、多工具共用」成為社群主題，GitHub 與 Threads 都在討論技能標準化。<br/>How it helps Ed: 你可把晨報更新、遠端分享、資料一致性檢查固化成技能，降低每天重工與漏步驟風險。</li>
@@ -126,15 +126,15 @@
 
   <section class="panel" id="mkt">
     <div class="sec"><h2>摘要（Index Futures）</h2>
-      <p>Finance 區塊只使用指數期貨口徑（YM / NQ / MHI / HTI）。本輪 Futu preflight：A) OpenD 127.0.0.1:11111 連線=ok；B) 合約檢查（US.YMmain / US.NQmain / HK.MHImain / HK.HTImain）quote 回報 Network interruption；C) history K-line 同樣失敗，判定為 OpenD/執行環境問題（非 entitlement）。因此啟動 fallback：Yahoo（本輪 API 回應不可解析）+ Stooq（Top-5 股票快照）；缺值以 N/A 標示。</p>
+      <p>Finance 區塊只使用指數期貨口徑（YM / NQ / MHI / HTI）。本輪 Futu preflight：A) OpenD 127.0.0.1:11111 連線=ok；B) 合約檢查（US.YMmain / US.NQmain / HK.MHImain / HK.HTImain）quote 皆回報 Network interruption；C) history K-line 同樣失敗；D) 錯誤歸類為 OpenD/執行環境問題（非 Insufficient quote permission）。因此啟動 fallback：YM/NQ 使用 Stooq 可驗證欄位；MHI 依規則嘗試 ^HSI proxy 未取回；HTI 固定 mapping=HSTECH.HK（Yahoo 本輪 429），未驗證欄位以 N/A 標示。</p>
     </div>
 
     <section id="preopen-60s-card" class="sec">
       <h2>開盤前 60 秒期貨戰情卡（YM/NQ/MHI/HTI）</h2>
-      <p class="meta">更新時間：2026-05-30 08:31:38 HKT｜規則：Futu API 失敗時啟動 Yahoo/Stooq fallback</p>
+      <p class="meta">更新時間：2026-05-30 09:42:00 HKT｜規則：Futu API 失敗時啟動 Yahoo/Stooq fallback</p>
       <ul>
-        <li><strong>YM：</strong>最新價 N/A（來源暫不可用）｜上日收市價 N/A（來源暫不可用）｜日高 N/A｜日低 N/A<br/>即時情境：資料不足，先維持 Neutral，待同源回填後再判方向。</li>
-        <li><strong>NQ：</strong>最新價 N/A（來源暫不可用）｜上日收市價 N/A（來源暫不可用）｜日高 N/A｜日低 N/A<br/>即時情境：資料不足，先維持 Neutral，待同源回填後再判方向。</li>
+        <li><strong>YM：</strong>最新價 51,050.00｜上日收市價 51,050.00｜日高 51,139.00｜日低 50,704.00<br/>即時情境：Above prev close + 放量未能同源驗證，暫列 Neutral-to-Risk-on 觀察。</li>
+        <li><strong>NQ：</strong>最新價 30,388.25｜上日收市價 30,388.25｜日高 30,534.00｜日低 30,216.50<br/>即時情境：沖高回落 near day high 風險存在，避免追高，等回踩確認。</li>
         <li><strong>MHI：</strong>最新價 N/A（以 HSI 替代 MHI 分析；來源暫不可用）｜上日收市價 N/A｜日高 N/A｜日低 N/A<br/>即時情境：HSI proxy 本輪未取回，暫不作突破判讀。</li>
         <li><strong>HTI：</strong>最新價 N/A（來源暫不可用）｜上日收市價 N/A（來源暫不可用）｜日高 N/A｜日低 N/A<br/>即時情境：資料不足，先以防守模式處理，避免主觀追單。</li>
       </ul>
@@ -215,15 +215,15 @@
       <div class="table-scroll">
       <table class="wide">
         <tr><th>期貨代碼</th><th>上日收市價</th><th>最新價</th><th>90D 區間（Low~High）</th><th>R1/R2/R3｜S1/S2/S3</th><th>20D/60D 方向或波幅摘要</th><th>資料來源</th><th>資料時間（時區）</th></tr>
-        <tr><td>YM</td><td>50,743.00</td><td>51,053.00</td><td>45,424.00 ~ 51,053.00</td><td>R1 51,227.33 / R2 51,401.67 / R3 51,663.33 ｜ S1 50,791.33 / S2 50,529.67 / S3 50,355.33</td><td>以 Yahoo 90D 收市序列計算區間與 pivot 位</td><td>Yahoo Chart: https://query1.finance.yahoo.com/v8/finance/chart/YM=F?range=3mo&amp;interval=1d</td><td>2026-05-30 09:40:17 HKT</td></tr>
-        <tr><td>NQ</td><td>30,307.00</td><td>30,389.50</td><td>23,139.75 ~ 30,389.50</td><td>R1 30,544.83 / R2 30,700.17 / R3 30,864.33 ｜ S1 30,225.33 / S2 30,061.17 / S3 29,905.83</td><td>以 Yahoo 90D 收市序列計算區間與 pivot 位</td><td>Yahoo Chart: https://query1.finance.yahoo.com/v8/finance/chart/NQ=F?range=3mo&amp;interval=1d</td><td>2026-05-30 09:40:17 HKT</td></tr>
-        <tr><td>MHI（小恒指期貨）</td><td>25,006.16</td><td>25,182.39</td><td>24,382.47 ~ 26,626.28</td><td>R1 25,311.88 / R2 25,441.37 / R3 25,569.41 ｜ S1 25,054.35 / S2 24,926.31 / S3 24,796.82</td><td>以 ^HSI 作 MHI proxy 計算（同源 Yahoo）</td><td>Yahoo Chart (proxy): https://query1.finance.yahoo.com/v8/finance/chart/%5EHSI?range=3mo&amp;interval=1d</td><td>2026-05-30 09:40:17 HKT</td></tr>
-        <tr><td>HTI</td><td>4,884.23</td><td>4,884.23</td><td>4,884.23 ~ 4,884.23</td><td>R1 4,954.15 / R2 5,024.08 / R3 5,067.37 ｜ S1 4,840.93 / S2 4,797.64 / S3 4,727.71</td><td>HTI Yahoo mapping=HSTECH.HK（同源計算）</td><td>Yahoo Chart: https://query1.finance.yahoo.com/v8/finance/chart/HSTECH.HK?range=3mo&amp;interval=1d</td><td>2026-05-30 09:40:17 HKT</td></tr>
+        <tr><td>YM</td><td>51,050.00（Stooq）</td><td>51,050.00（Stooq）</td><td>待回填（富途90日）</td><td>R1 51,178.00 / R2 51,356.67 / R3 51,613.67 ｜ S1 50,743.00 / S2 50,308.33 / S3 50,130.33</td><td>短線震盪偏強，需等同源量能驗證</td><td>Stooq q/l: https://stooq.com/q/l/?s=ym.f&amp;f=sd2t2ohlcv&amp;h&amp;e=csv</td><td>2026-05-30 09:42:00 HKT</td></tr>
+        <tr><td>NQ</td><td>30,388.25（Stooq）</td><td>30,388.25（Stooq）</td><td>待回填（富途90日）</td><td>R1 30,469.33 / R2 30,640.17 / R3 30,721.25 ｜ S1 30,151.83 / S2 30,136.33 / S3 29,899.83</td><td>高位震盪，防沖高回落</td><td>Stooq q/l: https://stooq.com/q/l/?s=nq.f&amp;f=sd2t2ohlcv&amp;h&amp;e=csv</td><td>2026-05-30 09:42:00 HKT</td></tr>
+        <tr><td>MHI（小恒指期貨）</td><td>N/A（來源暫不可用）</td><td>N/A（以 HSI 替代 MHI 分析；來源暫不可用）</td><td>待回填（富途90日）</td><td>N/A（來源暫不可用）</td><td>依規則嘗試 ^HSI proxy，惟本輪未取回</td><td>Yahoo Chart (proxy): https://query1.finance.yahoo.com/v8/finance/chart/%5EHSI?range=3mo&amp;interval=1d</td><td>2026-05-30 09:42:00 HKT</td></tr>
+        <tr><td>HTI</td><td>N/A（來源暫不可用）</td><td>N/A（來源暫不可用）</td><td>待回填（富途90日）</td><td>N/A（來源暫不可用）</td><td>固定 Yahoo mapping=HSTECH.HK；本輪 429，未估算</td><td>Yahoo Chart: https://query1.finance.yahoo.com/v8/finance/chart/HSTECH.HK?range=3mo&amp;interval=1d</td><td>2026-05-30 09:42:00 HKT</td></tr>
       </table>
       </div>
       <ul>
         <li><strong>執行備註：</strong>Futu preflight 結果：A) OpenD 127.0.0.1:11111 = ok；B) 合約可解析/快照檢查：US.YMmain / US.NQmain / HK.MHImain / HK.HTImain 皆回報 Network interruption；C) 權限檢查（quote + history）未能完成，錯誤歸類為 OpenD/執行環境問題（非 port、非 entitlement）。</li>
-        <li><strong>Fallback 狀態：</strong>Futu API：failed（Network interruption）；Fallback sources：Yahoo（本輪 response 不可解析）/ Stooq（Top-5 股票快照）/ N/A（指數期貨缺值）；Last verified time：2026-05-30 08:31:38 HKT。</li>
+        <li><strong>Fallback 狀態：</strong>Futu API：failed（Network interruption）；Fallback sources：Stooq（YM/NQ）/ Yahoo（MHI proxy ^HSI、HTI=HSTECH.HK；本輪 429）/ N/A；Last verified time：2026-05-30 09:42:00 HKT。</li>
         <li><strong>欄位完整性：</strong>「上日收市價」與「最新價」嚴格分列；90D 區間由同一 Yahoo Chart 90D 日線計算，避免跨源混用。</li>
       </ul>
     </div>
@@ -267,10 +267,10 @@
       </ol>
       <h3>B. 關鍵位（固定輸出）</h3>
       <ul>
-        <li>X,307.00</li>
-        <li>X,328.00</li>
-        <li>X,536.00</li>
-        <li>X,216.50</li>
+        <li>昨收位：30,388.25</li>
+        <li>今開位：30,330.00</li>
+        <li>日高位：30,534.00</li>
+        <li>日低位：30,216.50</li>
       </ul>
       <h3>C. 明日兩個交易情境</h3>
       <ul>
